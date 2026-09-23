@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ======================================
+   NAVNA Design System v4 — Corporate Light
+   Color Philosophy: Light Neutral + Bold Corporate Blue
+   ====================================== */
+
+@theme {
+  /* Background — Clean corporate white/light-gray */
+  --color-bg: #FFFFFF; /* Pure white base */
+  --color-surface: #FAFAFA;
+  --color-surface-2: #EFF6FF; /* Soft Blue Background */
+  --color-surface-3: #FEF2F2; /* Soft Crimson Background */
+
+  /* Text — Deep navy and clean grays */
+  --color-text: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+
+  /* Border — Subtle structural lines */
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+  --color-border-active: #94A3B8;
+
+  /* Accent — Royal corporate blue */
+  --color-accent: #1D4ED8;
+  --color-accent-hover: #1E40AF;
+  --color-accent-muted: rgba(29, 78, 216, 0.1);
+
+  /* Semantic */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444; /* Crimson accent */
+
+  /* shadcn compatibility */
+  --color-background: #F1F5F9;
+  --color-foreground: #0F172A;
+  --color-card: #FAFAFA;
+  --color-card-foreground: #0F172A;
+  --color-popover: #FAFAFA;
+  --color-popover-foreground: #0F172A;
+  --color-primary: #1D4ED8;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #EFF6FF;
+  --color-secondary-foreground: #1D4ED8;
+  --color-muted: #F8FAFC;
+  --color-muted-foreground: #64748B;
+  --color-accent-foreground: #1D4ED8;
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+  --color-input: #E2E8F0;
+  --color-ring: #1D4ED8;
+
+  /* Radius */
+  --radius: 0.75rem; /* 12px average for the 10-14px request */
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 15% 0%, rgba(29, 78, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
+    radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  position: relative;
+}
+
+/* Focus — blue accent ring */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection — royal blue */
+::selection {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+/* Scrollbar — light mode */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-border-active); }
+
+/* Screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.sr-only:focus {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  width: auto; height: auto; padding: 1rem 1.5rem; margin: 0;
+  overflow: visible; clip: auto; white-space: normal;
+  background: var(--color-accent); color: #FFFFFF; font-weight: 600;
+}
+
+/* Typography Utilities */
+.accent-text {
+  color: var(--color-accent);
+}
+
+.crimson-text {
+  color: var(--color-error);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Utility layout resets to purge old shadows/animations */
+.shadow-soft {
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+.logo-text {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}

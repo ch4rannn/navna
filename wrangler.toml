@@ -1,0 +1,5 @@
+name = "navna-website"
+compatibility_date = "2026-09-01"
+
+[site]
+bucket = "./out"
