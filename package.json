@@ -35,5 +35,15 @@
     "puppeteer-core": "^25.12.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@studio-freight/hamo": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@studio-freight/react-lenis": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }
