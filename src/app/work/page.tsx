@@ -8,10 +8,24 @@ import { projects } from "@/data/projects";
 import { ProjectImagePlaceholder } from "@/components/ui/ProjectImagePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Our Work | NAVNA — Digital Growth Agency",
+  title: "Our Work | NAVNA — Client Projects & Case Studies",
   description:
-    "Real client projects, digital experiments, and websites we've built at NAVNA.",
+    "See real client projects and websites built by NAVNA. From business websites to digital growth campaigns — explore how NAVNA helps businesses build a stronger online presence.",
+  keywords: [
+    "NAVNA work",
+    "NAVNA portfolio",
+    "NAVNA projects",
+    "navna case studies",
+    "websites built by NAVNA",
+    "digital agency portfolio",
+  ],
   alternates: { canonical: "https://navna.online/work" },
+  openGraph: {
+    title: "NAVNA Work — Client Projects & Websites We've Built",
+    description: "Explore real websites and digital projects built by NAVNA for businesses.",
+    url: "https://navna.online/work",
+    type: "website",
+  },
 };
 
 export default function WorkPage() {

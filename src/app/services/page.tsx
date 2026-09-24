@@ -7,10 +7,26 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Services | NAVNA — Digital Growth Agency",
+  title: "Services | NAVNA — Web Design, SEO, Google Business Profile & Meta Ads",
   description:
-    "Explore NAVNA's services: Google Business Profile Optimization, SEO, Web Design, Meta Ads, and Social Media Management.",
+    "Explore NAVNA's digital growth services: website design & development, Google Business Profile optimization, SEO & search visibility, Meta Ads management, and social media management. Build your online presence with NAVNA.",
+  keywords: [
+    "NAVNA services",
+    "navna web design",
+    "navna seo services",
+    "navna google business profile",
+    "navna meta ads",
+    "navna social media",
+    "digital growth services",
+    "website design agency services",
+  ],
   alternates: { canonical: "https://navna.online/services" },
+  openGraph: {
+    title: "NAVNA Services — Everything You Need to Grow Online",
+    description: "Web design, SEO, Google Business Profile, Meta Ads, and social media management — all from NAVNA.",
+    url: "https://navna.online/services",
+    type: "website",
+  },
 };
 
 // SVG Icons with consistent #315C4B accent color (applied via text-accent class)

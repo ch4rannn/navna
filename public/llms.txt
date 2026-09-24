@@ -1,0 +1,64 @@
+# NAVNA — Digital Growth Agency
+
+> NAVNA is a digital growth agency that helps businesses build and grow their online presence through website design & development, Google Business Profile optimization, SEO, Meta Ads, and social media management.
+
+## About NAVNA
+
+NAVNA is a digital growth agency founded by Chiranjivi Sah and Taha. The agency helps businesses establish, improve, and manage their digital presence. NAVNA provides practical, honest digital solutions — no jargon, no inflated promises.
+
+Website: https://navna.online
+Contact: https://navna.online/contact
+
+### Founders
+
+- **Chiranjivi Sah** — Co-Founder. Focused on full-stack web development, web design, and local SEO. LinkedIn: https://www.linkedin.com/in/chiranjivi-sah/
+- **Taha** — Co-Founder. Focused on SEO & search visibility, Meta Ads management, and social media management. LinkedIn: https://www.linkedin.com/in/mohammad-taha11/
+
+## Services
+
+NAVNA offers five core digital growth services:
+
+### 1. Website Design & Development
+Design and develop fast, responsive, professional websites that clearly present your business and turn visitors into customers. Built with Next.js, React, and Tailwind CSS.
+URL: https://navna.online/services/web-design-development
+
+### 2. Google Business Profile Optimization
+Help businesses improve their Google Business Profile, local presence, and visibility when customers search nearby on Google Maps and Google Search.
+URL: https://navna.online/services/google-business-profile
+
+### 3. SEO & Search Visibility
+Improve how your business is discovered through search engines with technically sound SEO, indexing, and on-page optimization.
+URL: https://navna.online/services/seo
+
+### 4. Meta Ads Management
+Create and manage Facebook and Instagram advertising campaigns designed to help businesses reach relevant audiences and generate enquiries.
+URL: https://navna.online/services/meta-ads
+
+### 5. Social Media Management
+Help businesses maintain a consistent and professional presence across their social media platforms through content planning and profile management.
+URL: https://navna.online/services/social-media-management
+
+## How NAVNA Works
+
+1. **Discovery** — Understand the business, goals, and current digital presence
+2. **Strategy** — Identify the right digital priorities and plan the approach
+3. **Execution** — Design, develop, and implement the agreed solutions
+4. **Launch** — Deploy and go live with quality assurance
+5. **Growth** — Ongoing optimization, management, and improvement
+
+## Key Pages
+
+- Homepage: https://navna.online
+- Services: https://navna.online/services
+- Work: https://navna.online/work
+- Process: https://navna.online/process
+- About: https://navna.online/about
+- Contact: https://navna.online/contact
+
+## Alternative Names
+
+NAVNA is also known as: NAVNA Agency, NAVNA Digital, NAVNA Digital Growth Agency, navna.online
+
+## Location
+
+NAVNA is a remote-first digital agency based in India that serves clients worldwide.

@@ -10,7 +10,7 @@ import { services, getServiceBySlug } from "@/data/services";
 import {
   generateServiceSchema,
   generateBreadcrumbSchema,
-
+  generateFAQSchema,
 } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -65,6 +65,15 @@ export default async function ServicePage({ params }: Props) {
           ),
         }}
       />
+      {/* FAQ Schema for AEO */}
+      {service.faqs && service.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema(service.faqs)),
+          }}
+        />
+      )}
 
 
       {/* Breadcrumb */}
@@ -177,6 +186,31 @@ export default async function ServicePage({ params }: Props) {
         </section>
       )}
 
+      {/* FAQ Section — visible for AEO */}
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="py-12 lg:py-16 border-t border-border" aria-labelledby="faq-heading">
+          <Container>
+            <AnimateIn>
+              <SectionHeading overline="FAQ" title="Common questions" />
+            </AnimateIn>
+            <div className="mt-8 max-w-3xl space-y-4">
+              {service.faqs.map((faq, i) => (
+                <AnimateIn key={i} delay={i * 60}>
+                  <details className="group border border-border rounded-xl bg-bg overflow-hidden hover:border-accent/40 transition-colors">
+                    <summary className="flex items-center justify-between cursor-pointer p-5 text-left font-semibold text-text hover:text-accent transition-colors [&::-webkit-details-marker]:hidden list-none">
+                      <span className="pr-4">{faq.question}</span>
+                      <svg className="w-5 h-5 shrink-0 text-text-muted group-open:rotate-180 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-text-secondary leading-relaxed">{faq.answer}</div>
+                  </details>
+                </AnimateIn>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
 
       {/* CTA */}

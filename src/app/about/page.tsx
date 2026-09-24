@@ -7,10 +7,27 @@ import { founders } from "@/data/founders";
 import { generatePersonSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About NAVNA | Digital Growth Agency",
+  title: "About NAVNA | Digital Growth Agency — Team, Mission & Story",
   description:
-    "NAVNA is a digital growth agency helping businesses establish and improve their digital presence through web design, SEO, and strategic management.",
+    "Learn about NAVNA — a digital growth agency founded by Chiranjivi Sah and Taha. NAVNA helps businesses build stronger digital presence through web design, SEO, Google Business Profile optimization, and social media management.",
+  keywords: [
+    "about NAVNA",
+    "NAVNA agency",
+    "NAVNA team",
+    "NAVNA founders",
+    "Chiranjivi Sah",
+    "Taha",
+    "digital growth agency team",
+    "navna digital agency",
+    "who is NAVNA",
+  ],
   alternates: { canonical: "https://navna.online/about" },
+  openGraph: {
+    title: "About NAVNA — Digital Growth Agency",
+    description: "Meet the NAVNA team. A digital growth agency founded by Chiranjivi Sah and Taha, helping businesses build and grow their online presence.",
+    url: "https://navna.online/about",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

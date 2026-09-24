@@ -7,10 +7,24 @@ import { processSteps } from "@/data/process";
 import { ProcessTimeline } from "@/components/ui/ProcessTimeline";
 
 export const metadata: Metadata = {
-  title: "How We Work | NAVNA",
+  title: "How NAVNA Works | Our Process — From Strategy to Ongoing Growth",
   description:
-    "We don't just deliver a service. We understand the business, choose the right digital priorities, execute them, and keep improving them.",
+    "Learn how NAVNA works with businesses — from understanding your goals, to building your website, optimizing your Google presence, running ads, and managing ongoing growth. See NAVNA's step-by-step process.",
+  keywords: [
+    "NAVNA process",
+    "how NAVNA works",
+    "navna workflow",
+    "digital agency process",
+    "how to work with NAVNA",
+    "navna project process",
+  ],
   alternates: { canonical: "https://navna.online/process" },
+  openGraph: {
+    title: "How NAVNA Works — Our Process",
+    description: "From first conversation to ongoing growth. See how NAVNA helps businesses build a stronger digital presence.",
+    url: "https://navna.online/process",
+    type: "website",
+  },
 };
 
 export default function ProcessPage() {

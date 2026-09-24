@@ -6,10 +6,25 @@ import { founders } from "@/data/founders";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Start a Project",
+  title: "Start a Project | Contact NAVNA — Digital Growth Agency",
   description:
-    "Ready to start your project? Get in touch with NAVNA. Tell us about your business and we'll help you build the right digital solution.",
+    "Ready to grow your business online? Contact NAVNA to start your project. Tell us about your business and goals — we'll help you build the right digital solution. Reach NAVNA via form, WhatsApp, or LinkedIn.",
+  keywords: [
+    "contact NAVNA",
+    "navna contact",
+    "start a project NAVNA",
+    "hire NAVNA",
+    "navna freelance",
+    "navna freelances",
+    "digital agency contact",
+  ],
   alternates: { canonical: "https://navna.online/contact" },
+  openGraph: {
+    title: "Contact NAVNA — Start Your Project",
+    description: "Tell us about your business. NAVNA will help you build the right digital solution.",
+    url: "https://navna.online/contact",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

@@ -9,7 +9,7 @@ import { projects } from "@/data/projects";
 import { ProjectImagePlaceholder } from "@/components/ui/ProjectImagePlaceholder";
 import { processSteps } from "@/data/process";
 import { founders } from "@/data/founders";
-import { generateWebSiteSchema } from "@/lib/schema";
+import { generateWebSiteSchema, generateFAQSchema, generateItemListSchema, generateWebPageSchema } from "@/lib/schema";
 
 /* Hero components */
 import HeroSection from "@/components/ui/hero-01-utils/hero";
@@ -23,10 +23,65 @@ const navigationData: NavigationSection[] = [
   { title: "About", href: "/about" },
 ];
 
+const homeFAQs = [
+  {
+    question: "What is NAVNA?",
+    answer: "NAVNA is a digital growth agency that helps businesses build and grow their online presence. NAVNA provides website design & development, Google Business Profile optimization, SEO, Meta Ads management, and social media management services. Visit navna.online to learn more."
+  },
+  {
+    question: "What services does NAVNA offer?",
+    answer: "NAVNA offers five core services: (1) Website Design & Development — custom, responsive business websites, (2) Google Business Profile Optimization — local search visibility on Google Maps, (3) SEO & Search Visibility — technical SEO and search engine indexing, (4) Meta Ads Management — Facebook and Instagram advertising campaigns, and (5) Social Media Management — content planning and profile management."
+  },
+  {
+    question: "Who founded NAVNA?",
+    answer: "NAVNA was co-founded by Chiranjivi Sah and Taha. Chiranjivi focuses on full-stack web development and design, while Taha specializes in SEO, Meta Ads, and social media management. Together they help businesses build stronger digital presence."
+  },
+  {
+    question: "Is NAVNA a freelance agency?",
+    answer: "NAVNA operates as a digital growth agency founded by experienced freelancers. Unlike traditional freelancers, NAVNA provides end-to-end digital solutions — from website design to ongoing search visibility and social media management — as a long-term growth partner for businesses."
+  },
+  {
+    question: "How can I contact NAVNA?",
+    answer: "You can contact NAVNA by visiting navna.online/contact and filling out the project enquiry form. You can also reach the founders directly via WhatsApp or LinkedIn. NAVNA responds to all enquiries within 24 hours."
+  },
+  {
+    question: "Does NAVNA build websites for small businesses?",
+    answer: "Yes. NAVNA specializes in building fast, responsive, professional websites for small and medium businesses. Every website NAVNA builds is SEO-ready, mobile-optimized, and designed to clearly present your business and convert visitors into customers."
+  },
+  {
+    question: "Can NAVNA help my business appear on Google?",
+    answer: "Yes. NAVNA offers Google Business Profile optimization and SEO services to help your business appear in Google Search results and on Google Maps. NAVNA sets up, optimizes, and manages your Google presence to improve local visibility."
+  },
+  {
+    question: "Where is NAVNA located?",
+    answer: "NAVNA is a remote-first digital agency based in India that serves clients worldwide. All services are delivered digitally, so NAVNA can work with businesses in any location."
+  },
+];
+
 export default function HomePage() {
   return (
     <>
+      {/* Structured Data: WebSite schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }} />
+
+      {/* Structured Data: WebPage schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebPageSchema(
+        "NAVNA — Digital Growth Agency",
+        "NAVNA helps businesses build and grow their online presence through website design, SEO, Google Business Profile optimization, Meta Ads, and social media management.",
+        "/"
+      )) }} />
+
+      {/* Structured Data: Service ItemList for rich results */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateItemListSchema([
+        { name: "Website Design & Development", url: "/services/web-design-development", description: "Custom, responsive business websites built to convert." },
+        { name: "Google Business Profile Optimization", url: "/services/google-business-profile", description: "Local search visibility on Google Maps." },
+        { name: "SEO & Search Visibility", url: "/services/seo", description: "Technical SEO and search engine indexing." },
+        { name: "Meta Ads Management", url: "/services/meta-ads", description: "Facebook and Instagram ad campaigns." },
+        { name: "Social Media Management", url: "/services/social-media-management", description: "Content planning and profile management." },
+      ], "NAVNA Digital Services")) }} />
+
+      {/* Structured Data: FAQ schema for AEO featured snippets */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(homeFAQs)) }} />
 
       {/* ===== HEADER & HERO ===== */}
       <HeroHeader navigationData={navigationData} />
@@ -364,6 +419,70 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ===== FAQ SECTION (AEO — Answer Engine Optimization) ===== */}
+      <section className="py-12 lg:py-16 border-t border-border bg-white" aria-labelledby="faq-heading">
+        <Container>
+          <AnimateIn>
+            <div className="max-w-2xl mb-12">
+              <SectionHeading
+                overline="FAQ"
+                title="Questions about NAVNA"
+                description="Common questions about our agency, services, and how we work with businesses."
+              />
+            </div>
+          </AnimateIn>
+
+          <div className="max-w-3xl space-y-6">
+            {homeFAQs.map((faq, i) => (
+              <AnimateIn key={i} delay={i * 50}>
+                <details className="group border border-border rounded-xl bg-bg overflow-hidden hover:border-accent/40 transition-colors">
+                  <summary className="flex items-center justify-between cursor-pointer p-6 text-left font-semibold text-text hover:text-accent transition-colors [&::-webkit-details-marker]:hidden list-none">
+                    <span className="pr-4">{faq.question}</span>
+                    <svg
+                      className="w-5 h-5 shrink-0 text-text-muted group-open:rotate-180 transition-transform duration-200"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-text-secondary leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              </AnimateIn>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ===== FINAL CTA ===== */}
+      <section className="relative py-12 lg:py-16 border-t border-border bg-bg overflow-hidden">
+        <Container className="relative z-10">
+          <div className="text-center max-w-2xl mx-auto">
+            <AnimateIn>
+              <h2 className="text-3xl font-bold tracking-tight text-text sm:text-4xl lg:text-5xl">
+                Ready to grow your business online?
+              </h2>
+            </AnimateIn>
+            <AnimateIn delay={50}>
+              <p className="mt-6 text-lg text-text-secondary leading-relaxed">
+                Tell us about your business and goals. NAVNA will help you choose the right digital priorities and build a stronger online presence.
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={100}>
+              <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
+                <Button href="/contact" size="lg">Start a Project</Button>
+                <Button href="/services" variant="secondary" size="lg">Our Services</Button>
+              </div>
+            </AnimateIn>
+          </div>
+        </Container>
+      </section>
 
     </>
   );
