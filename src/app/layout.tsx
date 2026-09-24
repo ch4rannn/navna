@@ -80,6 +80,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://navna.online",
   },
+  verification: {
+    other: {
+      "msvalidate.01": "6F924D340B70164AE4C48431BC450168",
+    },
+  },
 };
 
 
